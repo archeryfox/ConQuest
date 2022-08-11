@@ -6,6 +6,3 @@ G:\site\C#\WPF\ConQuest\GameCon\obj\Debug\GameCon.csproj.SuggestedBindingRedirec
 G:\site\C#\WPF\ConQuest\GameCon\obj\Debug\GameCon.csproj.CoreCompileInputs.cache
 G:\site\C#\WPF\ConQuest\GameCon\obj\Debug\GameCon.exe
 G:\site\C#\WPF\ConQuest\GameCon\obj\Debug\GameCon.pdb
-G:\site\C#\WPF\ConQuest\GameCon\obj\Debug\UserControl1.g.cs
-G:\site\C#\WPF\ConQuest\GameCon\obj\Debug\GameCon_MarkupCompile.cache
-G:\site\C#\WPF\ConQuest\GameCon\obj\Debug\GameCon_MarkupCompile.lref

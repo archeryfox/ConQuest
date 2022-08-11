@@ -31,7 +31,7 @@ namespace GameCon
             int ShieldDmg = 5;
             int ShieldDef = 12;
             string[,] zone = new string[9, 16];
-            //Zone _proto_zone = new Zone();
+            Zone _proto_zone = new Zone();
             bool EnemyDead = false;
             bool TalkToNPC = false;
             int EnemyHp = 50;
