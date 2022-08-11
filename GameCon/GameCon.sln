@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameCon", "GameCon.csproj", "{EB663090-CF3D-46F0-8A20-781160CA227B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB663090-CF3D-46F0-8A20-781160CA227B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB663090-CF3D-46F0-8A20-781160CA227B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB663090-CF3D-46F0-8A20-781160CA227B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB663090-CF3D-46F0-8A20-781160CA227B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {541532A3-AEB0-48D6-8442-A04A4D95B953}
+	EndGlobalSection
+EndGlobal
