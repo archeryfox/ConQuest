@@ -9,7 +9,7 @@ namespace GameCon
     internal class Weapon
     {
         int Def { get; set; }
-        int Dmg;
+        public int Dmg { get; set; }
     }
     internal class Player : Weapon
     {
@@ -18,7 +18,7 @@ namespace GameCon
             Money = 0;
             Hp = 100;
             Strenght = 5;
-            //Dmg = Strenght + weapon.Dmg;
+            Dmg = Strenght + weapon.Dmg;
 
         }
         public Player()
