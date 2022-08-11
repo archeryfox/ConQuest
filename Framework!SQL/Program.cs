@@ -34,7 +34,7 @@ namespace Framework_SQL
                 if (isSolid)
                 {
                     y = yb;
-                    x = xb;
+                    x = xb; 
                 }
                 
                 if (zone[y, x] == " ?")
