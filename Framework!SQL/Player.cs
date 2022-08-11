@@ -8,12 +8,12 @@ namespace Framework_SQL
 {
     internal class Player : Weapon
     {
-        public Player(Sword sword)
+        public Player(Weapon weapon)
         {
             Money = 0;
             Hp = 100;
             Strenght = 5;
-            Dmg = Strenght + sword.Dmg;
+            Dmg = Strenght + weapon.Dmg;
             
         }
         public Player()
