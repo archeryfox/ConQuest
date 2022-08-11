@@ -9,7 +9,7 @@ namespace Framework_SQL
     internal class Weapon
     {
         int Def { get; set; }
-        int Dmg { get; set; }
+        public int Dmg { get; set; }
         string Name { get; set; }
         string Type { get; set; }
     }
