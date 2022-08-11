@@ -1,0 +1,3 @@
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Framework!SQL.csproj.AssemblyReference.cache
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Framework!SQL.csproj.SuggestedBindingRedirects.cache
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Framework!SQL.csproj.CoreCompileInputs.cache
