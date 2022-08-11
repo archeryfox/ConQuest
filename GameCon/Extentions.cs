@@ -40,7 +40,7 @@ internal class Player : Weapon
     public int Dmg;
     void Quest()
     {
-
+         
     }
 }
 
