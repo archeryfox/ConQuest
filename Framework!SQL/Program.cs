@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace Framework_SQL
+namespace Game
 {
     internal class Program
     {
@@ -17,6 +17,7 @@ namespace Framework_SQL
             int EnemyDmg = 15;
             var Sword = new Sword();
             var Shield = new Shield();
+            var chest = new Chest();
             Player player = new Player();
             var IsFight = false;
             dynamic[] invenetary = { Sword, null };
@@ -25,18 +26,23 @@ namespace Framework_SQL
             int y = 2, x = 5;
             bool isSolid;
             //Буфер
-            int yb = y, xb = x;
 
+            int yb = y, xb = x;
             while (true)
             {
                 isSolid = zone[y, x] == " #" || zone[y, x] == " |" || zone[y, x] == "| "
-                       || zone[y, x] == "__" || zone[y, x] == "|_" || zone[y, x] == "_|" || zone[y, x] == " Ш";
+                       || zone[y, x] == "__" || zone[y, x] == "|_" || zone[y, x] == "_|";
                 if (isSolid)
                 {
                     y = yb;
                     x = xb; 
                 }
-                
+                if (zone[y, x] == " Ш")
+                {
+                    y = yb;
+                    x = xb;
+                    chest.Open(zone, y, x, yb, xb, chest.ChestOpen, chest.Book);
+                }
                 if (zone[y, x] == " ?")
                 {
                     y = yb;

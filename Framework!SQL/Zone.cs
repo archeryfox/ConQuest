@@ -5,9 +5,9 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framework_SQL
+namespace Game
 {
-    internal struct Zone
+    internal class Zone
     {
         public string Name { get; set; }
         public string Description { get; set; }

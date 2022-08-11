@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framework_SQL
+namespace Game
 {
     internal class Player : Weapon
     {
@@ -24,19 +24,8 @@ namespace Framework_SQL
             Dmg = Strenght;
         }
         public int Money;
-        private int hp;
-
-        public int Hp
-        {
-            get { return hp; }
-            set { hp = value; }
-        }
-
-        private static int Strenght;
+        public int Hp = 100;
+        private int Strenght;
         public int Dmg;
-        void Quest()
-        {
-
-        }
     }
 }
