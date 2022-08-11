@@ -9,41 +9,61 @@ namespace Framework_SQL
     internal class Weapon
     {
         int Def { get; set; }
-        int SwordDmg = 15;
-        int BowDmg = 12;
-        int BowDef = 5;
-        int Shield = 5;
-        int ShieldDef = 18;
+        int Dmg { get; set; }
+        string Name { get; set; }
+        string Type { get; set; }
     }
 
     class Sword : Weapon
     {
-        public int Def;
-        
-        public int Dmg;
-        static Sword()
+        public int Def ;
+
+        private int dmg;
+
+        public int Dmg
         {
-            Console.WriteLine("Меч бога!");
+            get { return dmg; }
+            private set { dmg = 15; }
         }
+
         
     }
     class Shield : Weapon
     {
-        private int def = 15;
+        private int def;
 
         public int Def
         {
             get { return def; }
-            private set {  }
+            private set { def = 15; }
         }
 
-        public int Dmg { get; private set; }
+        private int dmg;
+
+        public int Dmg
+        {
+            get { return dmg; }
+            set { dmg = 2; }
+        }
+
     }
     class Bow : Weapon
     {
-        
+        private int def;
 
+        public int Def
+        {
+            get { return def; }
+            private set { def = 5; }
+        }
 
+        private int dmg;
+
+        public int Dmg
+        {
+            get { return dmg; }
+            set { dmg = 12; }
+        }
 
     }
 }

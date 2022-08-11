@@ -7,7 +7,7 @@ namespace Framework_SQL
     {
         static void Main(string[] args)
         {
-
+             
             Zone _zone = new Zone();
             _zone.Name = "Tutorial Room";
             _zone.ZoneId = 1;
