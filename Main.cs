@@ -49,7 +49,8 @@ namespace ConsoleApp1
             while (true)
             {
                 isSolid = zone[y, x] == " #" || zone[y, x] == " |" || zone[y, x] == "| "
-                       || zone[y, x] == "__" || zone[y, x] == "|_" || zone[y, x] == "_|" || zone[y, x] == " Ш";
+                       || zone[y, x] == "__" || zone[y, x] == "|_" || zone[y, x] == "_|" 
+                       /*|| zone[y, x] == " Ш"*/;
                 void Solid(int y, int x, int yb, int xb)
                 {
                     y = yb;
