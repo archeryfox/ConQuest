@@ -30,6 +30,7 @@ namespace Game
             int yb = y, xb = x;
             while (true)
             {
+                player.Show(player.Hp,player.Dmg,player.Money);
                 isSolid = zone[y, x] == " #" || zone[y, x] == " |" || zone[y, x] == "| "
                        || zone[y, x] == "__" || zone[y, x] == "|_" || zone[y, x] == "_|";
                 if (isSolid)

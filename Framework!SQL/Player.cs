@@ -23,6 +23,10 @@ namespace Game
             Strenght = 5;
             Dmg = Strenght;
         }
+        public void Show(int hp, int dmg, int money)
+        {
+            Console.Write($" Здоровье: {hp} Урон:{dmg}\n Монет: {money} Зелий: { 0 }\n"); ;
+        }
         public int Money;
         public int Hp = 100;
         private int Strenght;

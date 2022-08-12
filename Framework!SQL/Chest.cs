@@ -12,7 +12,7 @@ namespace Game
         public bool ChestOpen;
         public bool Book;
 
-        public string[,] Open(string[,] zone, int y, int x, int yb, int xb, bool ChestOpen, bool Book) 
+        public void Open(string[,] zone, int y, int x, int yb, int xb, bool ChestOpen, bool Book) 
         {
                 if (this.ChestOpen == false)
                 {
@@ -25,7 +25,7 @@ namespace Game
                 {
                     Console.WriteLine("Вы уже открывали этот сундук. Теперь он пуст.");
                 }
-        return new string[y,x];
+        
         }
     }
                 
