@@ -7,3 +7,5 @@
 .vs/ConQuest/v17/.suo
 .vs/slnx.sqlite
 *.sqlite
+GameCon/obj/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cs
+*.cache
