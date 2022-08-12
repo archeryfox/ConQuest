@@ -260,11 +260,15 @@ namespace test_7_game
                         Console.WriteLine("Тут больше ничего нет.");
                         ms = false;
                         break;
-                    case(true,true or false,true or false, true or false,true or false,2):
+                    case(true,true or false,false, true or false,true or false,2):
                         Console.WriteLine("О нет! Дверь закрылась снаружи. \nВреатли её можно открыть отсюда..");
                         ms = false;
                         break;
-                    case(true,true or false,false,false,false,3):
+                    case (true, true or false,true, true or false, true or false, 2):
+                        Console.WriteLine("Я не смогу открыть эту дверь. \nНужно идти дальше.");
+                        ms = false;
+                        break;
+                    case (true,true or false,false,false,false,3):
                         Console.WriteLine("Mae govannen! Рад увидеть человека, хоть и жаль что в таком месте...\nТы как и я попал в ловушку лича. Живущего в конце этой пещеры.");
                         ms = false;
                         qst = true;
@@ -291,7 +295,10 @@ namespace test_7_game
                 }
                 switch (ms, dd, locms)
                 {
-
+                    case (true,true,4):
+                        break;
+                    default:
+                        break;
                 }
 
                 Console.WriteLine(y);
