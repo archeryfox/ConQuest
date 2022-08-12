@@ -28,7 +28,7 @@ namespace Game
 
         
     }
-    class Shield : Weapon
+    class Shield
     {
         private int def;
 
