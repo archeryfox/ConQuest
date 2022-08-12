@@ -112,12 +112,33 @@ namespace test_7_game
                 }
                 Console.Write($" {zone[i, j]}");
             }
+            void Room3 (int i, int j)
+            {
+                switch (i, j)
+                {
+                    case (4, 8):
+                        zone[i, j] = " ?";
+                        break;
+                    case (8, 10):
+                        zone[i, j] = "| ";
+                        break;
+                    case (1, 1):
+                        zone[i, j] = " |";
+                        break;
+                    case (0, 2):
+                        zone[i, j] = "__";
+                        break;
+                    default:
+                        break;
+                }
+            }
             //Спавн игрока
-            int y = 5, x = 7;
+            //int y = 5, x = 7;
+            int y = 4, x = 4;
             //Буфер
             int yb = y, xb = x;
             //Номер локации
-            int loc = 0;
+            int loc = 3;
             //Состояние диалога
             bool ms = false;
             //Готовность к диалогу
@@ -173,7 +194,7 @@ namespace test_7_game
                         {
                             zone[y, x] = " @";
                         }
-                        zone[i, j] = "  ";
+                        zone[i, j] = " .";
                     }
                 }
 
@@ -184,10 +205,8 @@ namespace test_7_game
                     {
                         switch (dd, loc, i, j)
                         {
-                            case (false, 2,>=3 and <=5,0):
-                                    zone[i, j] = " #";
-                                break;
-                            default:
+                            case (false, 2, >= 3 and <= 5, 0):
+                                zone[i, j] = " #";
                                 break;
                         }
                         switch (loc)
@@ -200,6 +219,9 @@ namespace test_7_game
                                 break;
                             case 2:
                                 Room2(i, j);
+                                break;
+                            case 3:
+                                Room3(i, j);
                                 break;
                         }
                     }
@@ -260,11 +282,15 @@ namespace test_7_game
                         Console.WriteLine("Тут больше ничего нет.");
                         ms = false;
                         break;
-                    case(true,true or false,true or false, true or false,true or false,2):
+                    case(true,true or false,false, true or false,true or false,2):
                         Console.WriteLine("О нет! Дверь закрылась снаружи. \nВреатли её можно открыть отсюда..");
                         ms = false;
                         break;
-                    case(true,true or false,false,false,false,3):
+                    case (true, true or false,true, true or false, true or false, 2):
+                        Console.WriteLine("Я не смогу открыть эту дверь. \nНужно идти дальше.");
+                        ms = false;
+                        break;
+                    case (true,true or false,false,false,false,3):
                         Console.WriteLine("Mae govannen! Рад увидеть человека, хоть и жаль что в таком месте...\nТы как и я попал в ловушку лича. Живущего в конце этой пещеры.");
                         ms = false;
                         qst = true;
@@ -291,7 +317,10 @@ namespace test_7_game
                 }
                 switch (ms, dd, locms)
                 {
-
+                    case (true,true,4):
+                        break;
+                    default:
+                        break;
                 }
 
                 Console.WriteLine(y);
