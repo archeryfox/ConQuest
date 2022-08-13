@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/windows,csharp,visualstudio,executable
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,csharp,visualstudio,executable
+# Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudio,csharp
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudio,csharp
 
 ### Csharp ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -399,18 +399,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-### Executable ###
-*.app
-*.bat
-*.cgi
-*.com
-*.exe
-*.gadget
-*.jar
-*.pif
-*.vb
-*.wsf
-
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -613,4 +601,8 @@ $RECYCLE.BIN/
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,csharp,visualstudio,executable
+# End of https://www.toptal.com/developers/gitignore/api/windows,visualstudio,csharp
+.vs/test_7_game/FileContentIndex/631e8223-f2a6-4714-bc16-93b5eebe015a.vsidx
+.vs/test_7_game/FileContentIndex/631e8223-f2a6-4714-bc16-93b5eebe015a.vsidx
+*.vsidx
+.vs/test_7_game/v17/.suo
