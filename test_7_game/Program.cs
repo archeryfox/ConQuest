@@ -138,7 +138,7 @@ namespace test_7_game
             //Буфер
             int yb = y, xb = x;
             //Номер локации
-            int loc = 3;
+            int loc = 0;
             //Состояние диалога
             bool ms = false;
             //Готовность к диалогу
