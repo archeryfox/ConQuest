@@ -10,6 +10,8 @@ namespace test_7_game
     {
         static void Main(string[] args)
         {
+            //Рандомайзер
+            Random random = new Random();
             //Размер поля
             string[,] zone = new string[9, 16];
             //Комнаты
@@ -116,6 +118,9 @@ namespace test_7_game
             {
                 switch (i, j)
                 {
+                    case (>=1 and <=7, 0):
+                        zone[i, j] = " |";
+                        break;
                     case ( >= 3 and <= 5, 15):
                         zone[i, j] = " #";
                         break;
@@ -125,12 +130,29 @@ namespace test_7_game
                         break;
                     case (2, >= 14 and <= 15):
                     case (6, >= 14 and <= 15):
+                    case (0, >= 1 and <= 13):
+                    case (8, >= 1 and <= 13):
                         zone[i, j] = "__";
+                        break;
+                    case (4,3):
+                        zone[i, j] = "[]";
                         break;
                     default:
                         break;
                 }
                 Console.Write($" {zone[i, j]}");
+            }
+            //Настройки врага
+            int ye = 4, xe = 6;
+            int hpe = 10;
+            int mpe = 0;
+            int pwe = 2;
+            int runtime = 0;
+            void Enemy(int i, int j)
+            {
+                if (i==ye && j==xe) {
+                    zone[i, j] = " x";
+                }
             }
             //Игрок
             int hp = 20;
@@ -140,7 +162,7 @@ namespace test_7_game
             bool hat = false;
             //Спавн игрока
             int y = 5, x = 7;
-            //int y = 4, x = 4;
+            //int y = 4, x = 13;
             //Буфер
             int yb = y, xb = x;
             //Номер локации
@@ -184,10 +206,160 @@ namespace test_7_game
                 }
 
                 //Проверка на препятствия
-                if (zone[y, x] == " #" || zone[y, x] == " |" || zone[y, x] == "__" || zone[y, x] == "| " || zone[y, x] == "* " || zone[y, x] == " ?" || zone[y, x] == " Y" || zone[y, x] == " w")
+                if (zone[y, x] == " #" || zone[y, x] == " |" || zone[y, x] == "__" || zone[y, x] == "| " || zone[y, x] == "* " || zone[y, x] == " ?" || zone[y, x] == " Y" || zone[y, x] == " w" || zone[y, x] == "[]")
                 {
                     y = yb;
                     x = xb;
+                }
+
+                //Бой
+                if (y==ye && x==xe && runtime==0) 
+                {
+                    int menu = 1;
+                    int menu2 = 0;
+                    while(true)
+                    {
+                        Console.Clear();
+                        Console.WriteLine($"\t\tFight\n\tYou\t\t  Enemy");
+                        Console.WriteLine($"       HP {hp}\t\t  HP {hpe}");
+                        Console.WriteLine($"       MP {mp}\t\t  MP {mpe}");
+                        Console.WriteLine($"       PW {pw}\t\t  PW {pwe}\n");
+                        switch (menu,menu2)
+                        {
+                            case (1,0):
+                                Console.WriteLine("   <Атака>\tИнвентарь\tСбежать");
+                                break;
+                            case (2,0):
+                                Console.WriteLine("   Атака\t<Инвентарь>\tСбежать");
+                                break;
+                            case (3,0):
+                                Console.WriteLine("   Атака\tИнвентарь\t<Сбежать>");
+                                break;
+                            case (1,1):
+                                Console.Write("   <Назад>\t");
+                                if (sw==true)
+                                {
+                                    Console.Write("Меч\t");
+                                }
+                                Console.Write("Игнорировать");
+                                break;
+                            case (2,1):
+                                Console.Write("   Назад\t");
+                                if (sw == true)
+                                {
+                                    Console.Write("<Меч>\t");
+                                }
+                                Console.Write("Игнорировать");
+                                break;
+                            case (3, 1):
+                                Console.Write("   Назад\t");
+                                if (sw == true)
+                                {
+                                    Console.Write("Меч\t");
+                                }
+                                Console.Write("<Игнорировать>");
+                                break;
+                            case (1, 2):
+                                Console.Write("   <Назад>\t");
+                                if (sw == true)
+                                {
+                                    Console.Write("Шляпа\t");
+                                }
+                                break;
+                            case (2, 2):
+                                Console.Write("   Назад\t");
+                                if (sw == true)
+                                {
+                                    Console.Write("<Шляпа>\t");
+                                }
+                                break;
+                        }
+                        Console.WriteLine($"");
+                        ConsoleKeyInfo consoleKey = Console.ReadKey(true);
+                        switch (consoleKey.Key)
+                        {
+                            case ConsoleKey.D:
+                                menu++;
+                                break;
+                            case ConsoleKey.A:
+                                menu--;
+                                break;
+                            case ConsoleKey.F:
+                                switch(menu,menu2)
+                                {
+                                    case (1,0):
+                                        menu2 = 1;
+                                        break;
+                                    case (2, 0):
+                                        menu = 1;
+                                        menu2 = 2;
+                                        break;
+                                    case (3, 0):
+                                        if (random.Next(3) == 2)
+                                        {
+                                            Console.Clear();
+                                            Console.WriteLine("\n\n\n\n\n\t\tВы сбежали\n\n\n\n");
+                                            runtime = 3;
+                                            Console.ReadKey(true);
+                                        } else
+                                        {
+                                            Console.Clear();
+                                            Console.WriteLine("\n\n\n\n\n\t\tВам не удалось сбежать\n\tНажмите любую клавишу для продолжения\n\n\n");
+                                            hp -= pwe;
+                                            Console.ReadKey(true);
+                                        }
+                                        break;
+                                    case (1, 1):
+                                        menu2 = 0;
+                                        break;
+                                    case (2, 1):
+                                        menu = 1;
+                                        menu2 = 0;
+                                        hp -= pwe;
+                                        hpe -= pw;
+                                        break;
+                                    case (3, 1):
+                                        menu = 1;
+                                        menu2 = 0;
+                                        hp -= pwe;
+                                        break;
+                                    case (1, 2):
+                                        menu = 2;
+                                        menu2 = 0;
+                                        break;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        if (menu == 4 && menu2 == 0)
+                        {
+                            menu--;
+                        }
+                        if (menu == 0)
+                        {
+                            menu++;
+                        }
+                        if (runtime > 0 || hp <= 0 || hpe <=0)
+                        {
+                            break;
+                        }
+                    }
+                    Console.Clear();
+                    if (hp <= 0)
+                    {
+                        Console.WriteLine("\n\n\n\n\n\t\tМонстр вас вырубил\n\n\n\n");
+                        Console.ReadKey(true);
+                    }
+                    if (hpe <= 0)
+                    {
+                        int reward = (10 + random.Next(5));
+                        money += reward;
+                        Console.WriteLine($"\n\n\n\n\n\t\tВы одолели монстра!\n\t\tЗолото +{reward}\n\n\n");
+                        Console.ReadKey(true);
+                    }
+                    
+                    Console.Clear();
                 }
 
                 //Перезапись буфера
@@ -219,6 +391,15 @@ namespace test_7_game
                                 zone[i, j] = " #";
                                 break;
                         }
+                        if (hpe > 0)
+                        {
+                            switch (loc)
+                            {
+                                case 3:
+                                    Enemy(i, j);
+                                    break;
+                            }
+                        }
                         switch (loc)
                         {
                             case 0:
@@ -234,6 +415,7 @@ namespace test_7_game
                                 Room3(i, j);
                                 break;
                         }
+                        
                     }
                     Console.WriteLine("");
                 }
@@ -379,6 +561,31 @@ namespace test_7_game
                         break;
                     default:
                         break;
+                }
+
+                //Движение врага
+                if (runtime == 0 && hpe > 0)
+                {
+                    if (ye > y)
+                    {
+                        ye--;
+                    }
+                    else if (ye < y)
+                    {
+                        ye++;
+                    }
+                    if (xe > x)
+                    {
+                        xe--;
+                    }
+                    else if (xe < x)
+                    {
+                        xe++;
+                    }
+                } 
+                else
+                {
+                    runtime--;
                 }
 
                 Console.Clear();
