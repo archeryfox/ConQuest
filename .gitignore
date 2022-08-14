@@ -10,6 +10,7 @@
 # User-specific files
 *.rsuser
 *.suo
+*.exe
 *.user
 *.userosscache
 *.sln.docstates
@@ -614,3 +615,5 @@ $RECYCLE.BIN/
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,executable,visualstudio,csharp
+*.exe
+.vs/test_7_game/v17/.suo
