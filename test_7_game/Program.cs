@@ -8,6 +8,7 @@ namespace test_7_game
 {
     internal class Program
     {
+        //MAIN - ОСНОВНАЯ РАБОЧАЯ ВЕТКА
         static void Main(string[] args)
         {
             //Рандомайзер
