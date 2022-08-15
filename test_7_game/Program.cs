@@ -8,7 +8,6 @@ namespace test_7_game
 {
     internal class Program 
     {
-        //MAIN - ОСНОВНАЯ РАБОЧАЯ ВЕТКА
         static void Main(string[] args)
         {
             //Рандомайзер
@@ -143,12 +142,22 @@ namespace test_7_game
                 }
                 Console.Write($" {zone[i, j]}");
             }
+            void Room4(int i, int j)
+            {
+                switch (i, j)
+                {
+                    default:
+                        break;
+                }
+                Console.Write($" {zone[i, j]}");
+            }
             //Настройки врага
             int ye = 4, xe = 6;
             int hpe = 10;
             int mpe = 0;
             int pwe = 2;
             int runtime = 0;
+            bool dir = false;
             void Enemy(int i, int j)
             {
                 if (i==ye && j==xe) {
@@ -162,24 +171,27 @@ namespace test_7_game
             int money = 12;
             bool hat = false;
             //Спавн игрока
-            int y = 5, x = 7;
-            //int y = 4, x = 13;
+            //int y = 5, x = 7;
+            int y = 4, x = 13;
             //Буфер
             int yb = y, xb = x;
+            int ybe = ye, xbe = xe;
             //Номер локации
-            int loc = 0;
+            int loc = 3;
             //Состояние диалога
             bool ms = false;
             //Готовность к диалогу
             bool gm = false;
             //Игрок
-            bool sw = false;
+            bool sw = true;
             //Наличие квеста
             bool qst = false;
             //Комментарий торговца
             bool tk = false;
             //Дверь в подземелье
             bool dd = false;
+            //Люк
+            bool trapdoor = false;
             //Место диалога
             int locms = 0;
 
@@ -205,16 +217,50 @@ namespace test_7_game
                         x += 15;
                         break;
                 }
+                switch (trapdoor, loc)
+                {
+                    case (true, 3):
+                        loc = 4;
+                        yb = 4;
+                        xb = 3;
+                        y = 4;
+                        x = 3;
+                        break;
+                }
 
                 //Проверка на препятствия
+                if (dir = true && (zone[ye, xe] == " #" || zone[ye, xe] == " |" || zone[ye, xe] == "__" || zone[ye, xe] == "| " || zone[ye, xe] == "[]" || zone[ye, xe] == " X"))
+                {
+                    ye = ybe;
+                    xe = xbe;
+                    ye++;
+                    if (dir = true && (zone[ye, xe] == " #" || zone[ye, xe] == " |" || zone[ye, xe] == "__" || zone[ye, xe] == "| " || zone[ye, xe] == "[]" || zone[ye, xe] == " X"))
+                    {
+                        ye = ybe;
+                        xe = xbe;
+                        ye--;
+                    }
+                }
+                if (dir = false && (zone[ye, xe] == " #" || zone[ye, xe] == " |" || zone[ye, xe] == "__" || zone[ye, xe] == "| " || zone[ye, xe] == "[]" || zone[ye, xe] == " X"))
+                {
+                    ye = ybe;
+                    xe = xbe;
+                    xe++;
+                    if (dir = false && (zone[ye, xe] == " #" || zone[ye, xe] == " |" || zone[ye, xe] == "__" || zone[ye, xe] == "| " || zone[ye, xe] == "[]" || zone[ye, xe] == " X"))
+                    {
+                        ye = ybe;
+                        xe = xbe;
+                        xe--;
+                    }
+                }
                 if (zone[y, x] == " #" || zone[y, x] == " |" || zone[y, x] == "__" || zone[y, x] == "| " || zone[y, x] == "* " || zone[y, x] == " ?" || zone[y, x] == " Y" || zone[y, x] == " w" || zone[y, x] == "[]")
                 {
                     y = yb;
                     x = xb;
                 }
-
+                
                 //Бой
-                if (y==ye && x==xe && runtime==0) 
+                if (y==ye && x==xe && runtime==0 && loc==3) 
                 {
                     int menu = 1;
                     int menu2 = 0;
@@ -262,14 +308,14 @@ namespace test_7_game
                                 break;
                             case (1, 2):
                                 Console.Write("   <Назад>\t");
-                                if (sw == true)
+                                if (hat == true)
                                 {
                                     Console.Write("Шляпа\t");
                                 }
                                 break;
                             case (2, 2):
                                 Console.Write("   Назад\t");
-                                if (sw == true)
+                                if (hat == true)
                                 {
                                     Console.Write("<Шляпа>\t");
                                 }
@@ -337,6 +383,14 @@ namespace test_7_game
                         {
                             menu--;
                         }
+                        if (menu == 4 && menu2 == 1)
+                        {
+                            menu--;
+                        }
+                        if (menu == 3 && menu2 == 2)
+                        {
+                            menu--;
+                        }
                         if (menu == 0)
                         {
                             menu++;
@@ -367,6 +421,8 @@ namespace test_7_game
                 yb = y;
                 xb = x;
                 gm = false;
+                ybe = ye;
+                xbe = xe;
 
                 //Создание поля / get
                 for (int i = 0; i < zone.GetUpperBound(0) + 1/* y */; i++)
@@ -415,6 +471,9 @@ namespace test_7_game
                             case 3:
                                 Room3(i, j);
                                 break;
+                            case 4:
+                                Room4(i, j);
+                                break;
                         }
                         
                     }
@@ -457,6 +516,11 @@ namespace test_7_game
                         }
                         Console.WriteLine("Поговорить: F");
                         gm = true;
+                        break;
+                    case (4, >= 2 and <= 4, false, 3):
+                    case ( >= 3 and <= 5, 3, false, 3):
+                        Console.WriteLine("Открытый ржавый люк\nСпуститься: F");
+                        trapdoor = true;
                         break;
                 }
 
@@ -535,6 +599,8 @@ namespace test_7_game
                     Console.WriteLine("-----------");
                 }
                 Console.WriteLine($"Золото - {money}м");
+
+                //Временные данные
                 Console.WriteLine("\n" + y);
                 Console.WriteLine(x);
 
@@ -565,26 +631,51 @@ namespace test_7_game
                 }
 
                 //Движение врага
-                if (runtime == 0 && hpe > 0)
+                if (runtime == 0 && hpe > 0 && loc==3)
                 {
-                    if (ye > y)
+                    if ((ye - y) == 1 || (ye - y) == -1 || (ye - y) == 0 || (xe - x) == 1 || (xe - x) == -1 || (xe - x) == 1)
                     {
-                        ye--;
+                        if (ye > y)
+                        {
+                            ye--;
+                        }
+                        else if (ye < y)
+                        {
+                            ye++;
+                        }
+                        dir = true;
+                        if (xe > x)
+                        {
+                            xe--;
+                        }
+                        else if (xe < x)
+                        {
+                            xe++;
+                        }
+                        dir = false;
+                    } 
+                    else {
+                        if (ye > yb)
+                        {
+                            ye--;
+                        }
+                        else if (ye < yb)
+                        {
+                            ye++;
+                        }
+                        dir = true;
+                        if (xe > xb)
+                        {
+                            xe--;
+                        }
+                        else if (xe < xb)
+                        {
+                            xe++;
+                        }
+                        dir = false;
                     }
-                    else if (ye < y)
-                    {
-                        ye++;
-                    }
-                    if (xe > x)
-                    {
-                        xe--;
-                    }
-                    else if (xe < x)
-                    {
-                        xe++;
-                    }
-                } 
-                else
+                }
+                if (runtime > 0)
                 {
                     runtime--;
                 }
