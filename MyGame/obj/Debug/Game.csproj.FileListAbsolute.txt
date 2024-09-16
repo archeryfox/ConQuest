@@ -1,0 +1,8 @@
+G:\site\C#\WPF\ConQuest\Framework!SQL\bin\Debug\Framework!SQL.exe.config
+G:\site\C#\WPF\ConQuest\Framework!SQL\bin\Debug\Framework!SQL.exe
+G:\site\C#\WPF\ConQuest\Framework!SQL\bin\Debug\Framework!SQL.pdb
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Game.csproj.AssemblyReference.cache
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Game.csproj.SuggestedBindingRedirects.cache
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Game.csproj.CoreCompileInputs.cache
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Framework!SQL.exe
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Framework!SQL.pdb

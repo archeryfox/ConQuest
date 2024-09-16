@@ -1,0 +1,16 @@
+G:\site\C#\WPF\Framework!SQL\bin\Debug\Framework!SQL.exe.config
+G:\site\C#\WPF\Framework!SQL\bin\Debug\Framework!SQL.exe
+G:\site\C#\WPF\Framework!SQL\bin\Debug\Framework!SQL.pdb
+G:\site\C#\WPF\Framework!SQL\obj\Debug\Framework!SQL.csproj.AssemblyReference.cache
+G:\site\C#\WPF\Framework!SQL\obj\Debug\Framework!SQL.csproj.SuggestedBindingRedirects.cache
+G:\site\C#\WPF\Framework!SQL\obj\Debug\Framework!SQL.csproj.CoreCompileInputs.cache
+G:\site\C#\WPF\Framework!SQL\obj\Debug\Framework!SQL.exe
+G:\site\C#\WPF\Framework!SQL\obj\Debug\Framework!SQL.pdb
+G:\site\C#\WPF\ConQuest\Framework!SQL\bin\Debug\Framework!SQL.exe.config
+G:\site\C#\WPF\ConQuest\Framework!SQL\bin\Debug\Framework!SQL.exe
+G:\site\C#\WPF\ConQuest\Framework!SQL\bin\Debug\Framework!SQL.pdb
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Framework!SQL.csproj.AssemblyReference.cache
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Framework!SQL.csproj.SuggestedBindingRedirects.cache
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Framework!SQL.csproj.CoreCompileInputs.cache
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Framework!SQL.exe
+G:\site\C#\WPF\ConQuest\Framework!SQL\obj\Debug\Framework!SQL.pdb
