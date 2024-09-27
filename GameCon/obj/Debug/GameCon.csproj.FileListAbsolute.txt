@@ -1,0 +1,8 @@
+G:\site\C#\WPF\ConQuest\GameCon\bin\Debug\GameCon.exe.config
+G:\site\C#\WPF\ConQuest\GameCon\bin\Debug\GameCon.exe
+G:\site\C#\WPF\ConQuest\GameCon\bin\Debug\GameCon.pdb
+G:\site\C#\WPF\ConQuest\GameCon\obj\Debug\GameCon.csproj.AssemblyReference.cache
+G:\site\C#\WPF\ConQuest\GameCon\obj\Debug\GameCon.csproj.SuggestedBindingRedirects.cache
+G:\site\C#\WPF\ConQuest\GameCon\obj\Debug\GameCon.csproj.CoreCompileInputs.cache
+G:\site\C#\WPF\ConQuest\GameCon\obj\Debug\GameCon.exe
+G:\site\C#\WPF\ConQuest\GameCon\obj\Debug\GameCon.pdb
